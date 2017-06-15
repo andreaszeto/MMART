@@ -10,9 +10,27 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var Me: UILabel!
+
+    var tapCount = 0
+    @IBAction func Buttontapped(_ sender: AnyObject) {
+        
+        tapCount = tapCount+1
+        
+        if tapCount >= 10 {
+            Me.text = "10 times?!"
+        }
+    }
+    
+    @IBAction func OtherButtonPushed(_ sender: Any) { Me.text = "Buttons are Cool"
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+       
+        self.view.backgroundColor = UIColor.green
+       
+        
     }
 
     override func didReceiveMemoryWarning() {
